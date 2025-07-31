@@ -1,3 +1,4 @@
+// Local keyword, helps create a local variable, that is not accessible by other class unless extended
     class first;
       /* to keep the scope of the class local to a class we use the "local" keyword*/
       int data=2;
