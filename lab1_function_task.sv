@@ -1,3 +1,4 @@
+//Functions and Tasks
 class first;
   bit [4:0] data = 90;   // Fixed width to store 90
   bit [4:0] data2;
