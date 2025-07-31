@@ -1,0 +1,46 @@
+/* Implication constarint */
+
+class generator;
+  randc logic [2:0] a, b;
+  extern constraint data;
+  extern constraint data2;
+  extern constraint data3;
+endclass
+
+constraint generator::data{
+  if (a==2 || a==3 | a==4) (b == 3);};
+
+constraint generator::data2{
+  (a==2) -> (b == 2);
+};
+
+constraint generator::data3{
+  if (a==2)
+    b == 1;
+  else {
+    if ( a==4){
+      	b== 3;
+    } else {
+      b == a;
+    }
+  }
+};
+
+  
+module tb;
+  generator g1;
+  
+  initial begin
+    g1 = new();
+    g1.data.constraint_mode(0);
+    g1.data2.constraint_mode(0);
+    g1.data3.constraint_mode(1);
+    repeat(10) begin
+    g1.randomize();
+    $display("Value of a = %0d",g1.a);
+    $display("Value of b = %0d",g1.b);
+    end
+
+  end
+  
+endmodule
