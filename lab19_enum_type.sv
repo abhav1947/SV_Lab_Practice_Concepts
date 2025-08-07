@@ -1,5 +1,5 @@
 class enum_type;
-  randc enum {ABHAV, VENKAT, VELIDI, APPU} _state_req;
+  randc enum {ABH, VEN, VE, AP} _state_req;
   
   function void display_s();
     $display("_state_req1=%s",_state_req.name());
@@ -16,4 +16,5 @@ module tb;
       e1.display_s();
     end
   end
+
 endmodule
