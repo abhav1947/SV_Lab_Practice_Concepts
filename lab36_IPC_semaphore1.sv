@@ -17,6 +17,7 @@ module tb;
       job("A", 2, 30ns);  // uses 2 credits
       job("B", 3, 20ns);  // uses 3 credits
       job("C", 1, 10ns);  // uses 1 credit
+      // As all the credits are used up d will wait
       job("D", 2, 5ns);
     join
 
