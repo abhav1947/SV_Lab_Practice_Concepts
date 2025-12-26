@@ -1,4 +1,4 @@
-// Event e1 has triggered and wait has occured after it
+// Event e1 has triggered and wait has not occured after it
 module tb;
   
   event e1;
