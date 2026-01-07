@@ -2,10 +2,16 @@
 
 module element_locator_methods;
   // Static single dimensional array
-  int array[8] = '{2,1,7,3,1,8,9,6};
+  logic [2:0] array[];
+  
   // Queue
-  int res[$];
+  logic [2:0] res[$];
   initial begin
+    array = new[20];
+    foreach(array[i]) begin
+      array[i] = $urandom;
+      $display("array[%0d] = %0d",i,array[i]);
+    end
     //***********Mandatory with clause***********//
     res=array.find(x) with (x>4);
     $display("find(x) = %0p", res);
